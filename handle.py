@@ -7,9 +7,7 @@ import web
 
 import logging
 logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
-logging.debug('This message should go to the log file')
-logging.info('So should this')
-logging.warning('And this, too')
+logging.info('this is Handle')
 
 class Handle(object):
 

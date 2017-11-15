@@ -2,7 +2,9 @@
 # filename: main.py
 import web
 from handle import Handle
-
+import logging
+logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
+logging.info('this is main')
 
 urls = (
     '/wx', 'Handle',
