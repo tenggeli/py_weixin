@@ -12,6 +12,8 @@ logging.info('So should this')
 logging.warning('And this, too')
 
 class Handle(object):
+
+    '''
     def GET(self):
         try:
             data = web.input()
@@ -35,7 +37,7 @@ class Handle(object):
                 return ""
         except Exception, Argument:
             return Argument
-'''
+    '''
 
     def POST(self):
         try:
@@ -54,4 +56,3 @@ class Handle(object):
                 return "success"
         except Exception, Argment:
             return Argment
-'''
