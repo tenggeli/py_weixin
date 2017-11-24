@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 # filename: main.py
 import web
+import uwsgi
 from handle import Handle
+
+
 import logging
 logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
 logging.info('this is main')
@@ -9,7 +12,8 @@ logging.info('this is main')
 urls = (
     '/wx', 'Handle',
     '/t', 'test',  # 测试
-    '/', 'home'
+    '/', 'home',
+    '/reload','reload'#重启服务
 )
 
 class test:
@@ -35,6 +39,11 @@ class home:
         return "Hello Web.py"
     def POST(self):
         return self.GET()
+class reload :
+    def GET(self):
+        uwsgi.reload()
+        return "已经重启"
+
 
 app = web.application(urls, globals())
 #返回wsgi接口
