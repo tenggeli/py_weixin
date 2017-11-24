@@ -41,12 +41,11 @@ class Handle(object):
         try:
             webData = web.data()
             print "Handle Post webdata is ", webData   #后台打日志
-            logging.warning('Handle Post webdata is  {}'.format('webData'))
             recMsg = receive.parse_xml(webData)
             if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                content = "test"
+                content = recMsg.Content
                 replyMsg = reply.TextMsg(toUser, fromUser, content)
                 return replyMsg.send()
             else:

@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 # filename: reply.py
 import time
-
+import logging
+logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
+logging.info('this is reply.py')
 
 class Msg(object):
     def __init__(self):
