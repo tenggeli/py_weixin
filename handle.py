@@ -5,6 +5,8 @@ import reply
 import receive
 import web
 
+
+
 import logging
 logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
 logging.info('this is Handle')
@@ -40,10 +42,9 @@ class Handle(object):
     def POST(self):
         try:
             webData = web.data()
-            print "Handle Post webdata is ", webData   #后台打日志
+            print "Handle Post webdata is ", webData  # 后台打日志
             recMsg = receive.parse_xml(webData)
-            print "数据层：",recMsg
-            if isinstance(recMsg, receive.Msg) :
+            if isinstance(recMsg, receive.Msg):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
                 if recMsg.MsgType == 'text':
@@ -53,13 +54,12 @@ class Handle(object):
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
                     mediaId = recMsg.MediaId
-                    print mediaId
                     replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
                     return replyMsg.send()
                 else:
                     return reply.Msg().send()
             else:
                 print "暂且不处理"
-                return "success"
+                return reply.Msg().send()
         except Exception, Argment:
             return Argment
