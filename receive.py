@@ -35,6 +35,7 @@ class TextMsg(Msg):
 class ImageMsg(Msg):
     def __init__(self, xmlData):
         Msg.__init__(self, xmlData)
+        print "xkkkk"
         self.PicUrl = xmlData.find('PicUrl').text
         self.MediaId = xmlData.find('MediaId').text
         print "cccccc"
