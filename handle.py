@@ -42,6 +42,7 @@ class Handle(object):
             webData = web.data()
             print "Handle Post webdata is ", webData   #后台打日志
             recMsg = receive.parse_xml(webData)
+            print "数据层：",recMsg
             if isinstance(recMsg, receive.Msg) :
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
