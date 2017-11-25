@@ -19,6 +19,7 @@ def parse_xml(web_data):
 
 class Msg(object):
     def __init__(self, xmlData):
+        print "Msg"
         self.ToUserName = xmlData.find('ToUserName').text
         self.FromUserName = xmlData.find('FromUserName').text
         self.CreateTime = xmlData.find('CreateTime').text
@@ -29,13 +30,14 @@ class Msg(object):
 
 class TextMsg(Msg):
     def __init__(self, xmlData):
+        print "text"
         Msg.__init__(self, xmlData)
         self.Content = xmlData.find('Content').text.encode("utf-8")
 
 class ImageMsg(Msg):
     def __init__(self, xmlData):
         Msg.__init__(self, xmlData)
-        print "xkkkk"
+        print "ImageMsg"
         self.PicUrl = xmlData.find('PicUrl').text
         self.MediaId = xmlData.find('MediaId').text
         print "cccccc"
