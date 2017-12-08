@@ -53,9 +53,8 @@ class Handle(object):
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
                 if recMsg.MsgType == 'image':
-                    print "图片执行出现错误"
-                    print recMsg
-                    mediaId = receive.ImageMsg(webData).MediaId
+                    mediaId = recMsg.MediaId
+                    print "返回的数据mediaId为：", mediaId
                     replyMsg = reply.ImageMsg(toUser, fromUser, mediaId)
                     return replyMsg.send()
                 else:
