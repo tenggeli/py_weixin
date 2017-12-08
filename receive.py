@@ -2,10 +2,6 @@
 # filename: receive.py
 import xml.etree.ElementTree as ET
 
-import logging
-logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
-logging.info('this is receive.py')
-
 def parse_xml(web_data):
     if len(web_data) == 0:
         return None

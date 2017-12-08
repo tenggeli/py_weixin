@@ -42,7 +42,7 @@ class home:
 class reload :
     def GET(self):
         uwsgi.reload()
-        return "已经重启"
+        return "uwsgi is reload success"
 
 
 app = web.application(urls, globals())
