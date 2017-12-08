@@ -8,6 +8,7 @@ def parse_xml(web_data):
     xmlData = ET.fromstring(web_data)
     msg_type = xmlData.find('MsgType').text
     if msg_type == 'text':
+        print "etxtxtxtt"
         return TextMsg(xmlData)
     elif msg_type == 'image':
         print "xxxx"
