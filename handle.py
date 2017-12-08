@@ -47,9 +47,9 @@ class Handle(object):
             if isinstance(recMsg, receive.Msg):
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
-                print recMsg.MsgType
                 if recMsg.MsgType == 'text':
                     content = recMsg.Content
+                    print recMsg
                     print "返回的数据为：", content
                     replyMsg = reply.TextMsg(toUser, fromUser, content)
                     return replyMsg.send()
