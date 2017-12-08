@@ -21,7 +21,7 @@ class Msg(object):
         self.CreateTime = xmlData.find('CreateTime').text
         self.MsgType = xmlData.find('MsgType').text
         self.MsgId = xmlData.find('MsgId').text
-        self.Content = xmlData.find('Content').text
+        # self.Content = xmlData.find('Content').text
         #self.MediaId = xmlData.find('MediaId').text
 
 class TextMsg(Msg):
