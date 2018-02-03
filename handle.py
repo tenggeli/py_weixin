@@ -13,7 +13,7 @@ logging.info('this is Handle')
 
 class Handle(object):
 
-    '''
+
     def GET(self):
         try:
             data = web.input()
@@ -37,8 +37,9 @@ class Handle(object):
                 return ""
         except Exception, Argument:
             return Argument
-    '''
 
+    '''
+    
     def POST(self):
         try:
             webData = web.data()
@@ -64,3 +65,4 @@ class Handle(object):
                 return reply.Msg().send()
         except Exception, Argment:
             return Argment
+    '''
