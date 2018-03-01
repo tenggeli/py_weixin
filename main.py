@@ -4,9 +4,8 @@ import web
 import uwsgi
 from handle import Handle
 
-
 import logging
-logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.DEBUG)
+logging.basicConfig(filename='/mnt/log/nginx/python.log',level=logging.INFO)
 logging.info('this is main')
 
 urls = (
@@ -52,5 +51,6 @@ application = app.wsgifunc()
 
 if __name__ == '__main__':
     # app = web.application(urls, globals())
+    logging.info('app is run!')
     app.run()
 

@@ -14,8 +14,6 @@ logging.info('this is Handle')
 class Handle(object):
 
     '''
-
-
     def GET(self):
         try:
             data = web.input()
@@ -40,7 +38,7 @@ class Handle(object):
         except Exception, Argument:
             return Argument
     '''
-    
+
     def POST(self):
         try:
             webData = web.data()
